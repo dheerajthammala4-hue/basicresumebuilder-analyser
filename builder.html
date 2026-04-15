@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🧾 Resume Builder</h1>
+
+    <div class="form-section">
+
+      <div class="template-gallery">
+    <div class="template-card" onclick="selectTemplate('classic')">Classic</div>
+    <div class="template-card" onclick="selectTemplate('modern')">Modern</div>
+    <div class="template-card" onclick="selectTemplate('minimal')">Minimal</div>
+    <div class="template-card" onclick="selectTemplate('colorful')">Colorful</div>
+</div>
+<select id="template" onchange="livePreview()" style="display:none;">
+    <option value="classic">Classic</option>
+    <option value="modern">Modern</option>
+    <option value="minimal">Minimal</option>
+    <option value="colorful">Colorful</option>
+</select>
+
+        <button onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+
+        <!-- PHOTO -->
+        <label>Upload Photo</label>
+        <input type="file" id="photo" accept="image/*" onchange="previewPhoto()">
+
+        <!-- PERSONAL DETAILS -->
+        <h3>Personal Details</h3>
+
+        <input id="firstName" placeholder="First Name" oninput="livePreview()">
+        <input id="lastName" placeholder="Last Name" oninput="livePreview()">
+
+        <input id="email" placeholder="Email" oninput="livePreview()">
+        <input id="phone" placeholder="Phone" oninput="livePreview()">
+
+        <input id="dob" type="date" oninput="livePreview()">
+        <input id="address" placeholder="Address" oninput="livePreview()">
+
+        <input id="linkedin" placeholder="LinkedIn" oninput="livePreview()">
+        <input id="github" placeholder="GitHub" oninput="livePreview()">
+
+        <!-- SUMMARY -->
+        <textarea id="summary" placeholder="Summary" oninput="livePreview()"></textarea>
+
+        <!-- SKILLS -->
+        <textarea id="skills" placeholder="Skills (comma separated)" oninput="livePreview()"></textarea>
+
+        <!-- EDUCATION -->
+        <h3>Education</h3>
+
+        <div class="edu-row">
+            <input id="course" placeholder="Course">
+            <input id="college" placeholder="College">
+            <input id="year" placeholder="Year">
+            <input id="percentage" placeholder="Percentage">
+
+            <button onclick="addEducation()">➕</button>
+        </div>
+
+        <div id="eduPreview"></div>
+
+        <!-- EXPERIENCE -->
+        <textarea id="experience" placeholder="Experience (comma separated)" oninput="livePreview()"></textarea>
+
+        <!-- PROJECTS -->
+        <textarea id="projects" placeholder="Projects (comma separated)" oninput="livePreview()"></textarea>
+
+    </div>
+    
+<div class="preview-section">
+    <h2>Live Preview</h2>
+    <div id="output"></div>
+
+    <!-- DOWNLOAD BUTTON -->
+    <button onclick="downloadPDF()" style="margin-top: 15px; padding: 10px; cursor: pointer;">
+        📄 Download Resume
+    </button>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="builder.js"></script>
+
+</body>
+</html>

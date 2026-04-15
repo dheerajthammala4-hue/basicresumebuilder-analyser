@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="analyzer-container">
+
+    <h1>📊 Resume Analyzer</h1>
+    <p class="subtitle">Upload your resume and get instant insights</p>
+
+    <div class="analyzer-card">
+
+        <!-- JOB ROLE -->
+        <label>Select Job Role</label>
+        <select id="role">
+            <option value="frontend">Frontend Developer</option>
+            <option value="backend">Backend Developer</option>
+            <option value="data">Data Analyst</option>
+        </select>
+
+        <!-- FILE UPLOAD -->
+        <div class="upload-box">
+            <input type="file" id="file">
+            <p>Drag & drop your resume or click to upload</p>
+        </div>
+
+        <!-- BUTTON -->
+        <button onclick="analyze()">🚀 Analyze Resume</button>
+
+    </div>
+
+</div>
+<!-- LOADING SCREEN -->
+<!-- LOADING SCREEN -->
+<div id="loader" class="loader">
+    <div class="spinner"></div>
+    <p>Analyzing your resume... ⏳</p>
+</div>
+<textarea id="jobDesc" placeholder="Paste Job Description here"></textarea>
+<h3>Or Paste Resume Text (Recommended)</h3>
+<textarea id="manualText" placeholder="Paste your resume text here"></textarea>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+<script src="analyzer.js"></script>
+
+</body>
+</html>

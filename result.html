@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Analysis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 style="text-align:center;">📊 Resume Analysis Dashboard</h1>
+
+<div class="dashboard">
+
+    <!-- SCORE -->
+    <div class="score-box">
+        <h2 id="score">0</h2>
+        <p>Score</p>
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="progress-section">
+
+        <h3>Skills Match</h3>
+        <div class="bar"><div id="skillBar"></div></div>
+
+        <h3>Keyword Match</h3>
+        <div class="bar"><div id="keywordBar"></div></div>
+
+        <h3>Resume Length</h3>
+        <div class="bar"><div id="lengthBar"></div></div>
+
+    </div>
+
+    <!-- INFO -->
+    <div class="info-section">
+        <p>✅ Skills Found: <span id="found"></span></p>
+        <p>❌ Missing Skills: <span id="missing"></span></p>
+        <p>⚠️ Missing Sections: <span id="sections"></span></p>
+        <p>💡 Suggestions:</p>
+        <ul id="suggestions"></ul>
+    </div>
+
+</div>
+<div class="chart-box">
+    <canvas id="chart"></canvas>
+</div>
+<div class="ats-section">
+
+    <h2>📊 ATS Breakdown</h2>
+
+    <div class="ats-item">
+        <p>Skills</p>
+        <div class="bar"><div id="atsSkill"></div></div>
+    </div>
+
+    <div class="ats-item">
+        <p>Keywords</p>
+        <div class="bar"><div id="atsKeyword"></div></div>
+    </div>
+
+    <div class="ats-item">
+        <p>Experience</p>
+        <div class="bar"><div id="atsExperience"></div></div>
+    </div>
+
+    <div class="ats-item">
+        <p>Formatting</p>
+        <div class="bar"><div id="atsFormat"></div></div>
+    </div>
+
+</div>
+<div class="chart-box">
+    <canvas id="pieChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="result.js"></script>
+
+</body>
+</html>
